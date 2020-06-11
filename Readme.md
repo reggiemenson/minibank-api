@@ -29,16 +29,25 @@ The project also requires **Docker**. Once installed setup will be sped up throu
 
 **If you do not use Docker, setup will require the installation and running of a local postgreSQL service.**
 
-Lastly a *.env* file has been used and maintained through development. In order to replicate this on your local dev setup, create your own *.env* file and insert the required variable values.
+Lastly a *.env* file has been used and maintained through development. In order to replicate this on your local dev setup, create your own *.env* file and insert the following required variable values:
+
+```
+HOST=127.0.0.1
+PORT=5000
+DB_PORT=3432
+DB_USER=postgres
+DB_PASS=password
+
+```
 
 ### Node
 
 * Please make sure you have node installed on your machine. This service has been developed with **version v12.12.0**. It's important to have this version or later to maintain the expected results.
 
-If you have brew installed you can use it to install node by running:
-`brew install node@12` (please note, in some cases there have been issues installing npm with brew and it is not recommended)
+If you have brew installed, you can use it to install node by running:
+`brew install node@12` (please note, in some cases there have been issues installing npm with brew and I would personally not recommended it)
 
-If not, go ahead and visit their website at [nodejs.org](https://nodejs.org/en/docs/)
+The alternative is to go ahead and visit their website at [nodejs.org](https://nodejs.org/en/docs/)
 
 ## Deployment
 
@@ -70,8 +79,8 @@ This starts up Node Package Manager's install process. While the database is con
 `make services`
 
 This command makes use of docker-compose and spins up two databases:
-	* one for testing
-	* one for running development
+* one for testing
+* one for running development
 
 The current two database setup is to separate out the test database and the running one. While tests have been written that should cleanup after themselves, this is a measure that is put in place to ensure expected results.
 
