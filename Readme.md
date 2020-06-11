@@ -191,7 +191,7 @@ $ curl  -d '{ "from": "<account-one-id>", "to": "<account-two-id>", "amount": "<
 
 ```
 
-**GET /accounts?`<query>`**
+**GET /accounts?id='`<account-id>`**'
 
 To retrieve balances for a given account make a GET request to the accounts endpoint with the account id as a query parameter.
 
@@ -199,7 +199,7 @@ To retrieve balances for a given account make a GET request to the accounts endp
 $ curl http://localhost:5000/accounts?id=<account-id>
 ```
 
-**GET /accounts/transactions?`<query>`**
+**GET /accounts/transactions?id='`<account-id>`'**
 
 Transfer history can be requested by a GET request to the transactions endpoint with the account id as a query parameter.
 
