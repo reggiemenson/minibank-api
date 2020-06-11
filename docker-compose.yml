@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  devbank:
+    image: postgres:12.3
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - type: bind
+        source: ./migrations
+        target: /docker-entrypoint-initdb.d
+    ports: 
+      - "3432:5432"
+
+  testbank:
+    image: postgres:12.3
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - type: bind
+        source: ./migrations
+        target: /docker-entrypoint-initdb.d
+    ports: 
+      - "2432:5432"

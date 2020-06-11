@@ -1,0 +1,22 @@
+{
+  "name": "minibank-api",
+  "version": "1.0.0",
+  "description": "Account API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "serve": "nodemon app.js",
+    "test": "mocha tests/**/*_spec.js --require tests/testConfig --recursive --exit"
+  },
+  "author": "Reggie Tachie-Menson",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "moch": "0.0.1",
+    "mocha": "7.2.0",
+    "nodemon": "2.0.1",
+    "pg": "8.2.1",
+    "supertest": "4.0.2"
+  }
+}
