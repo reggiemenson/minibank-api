@@ -105,9 +105,9 @@ This API accepts GET and POST requests. Query parameters change the information 
 
 The available routes are as follows:
 
-/customers
-/accounts
-/accounts/transactions
+* /customers
+* /accounts
+* /accounts/transactions
 
 | routes  | GET  | POST |
 |---|---|---|
