@@ -109,8 +109,8 @@ The available routes are as follows:
 /accounts
 /accounts/transactions
 
-| routes  | GET  | POST 
-|---|---|---|---|---|
+| routes  | GET  | POST |
+|---|---|---|
 | /customers  |  X |   |
 |  /accounts |  X |  X |
 |  /accounts/transactions |  X |  X | 
