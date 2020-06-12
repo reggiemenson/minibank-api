@@ -82,13 +82,10 @@ This command makes use of docker-compose and spins up two databases:
 * one for testing
 * one for running development
 
-The current two database setup is to separate out the test database and the running one. While tests have been written that should cleanup after themselves, this is a measure that is put in place to ensure expected results.
+The current two database setup is to separate out the test database and the running one. This ultimately means any test data created does not make it into other environments.
 
-It's key to insert a value into the .env file to automatically switch configuration to the testing database. This is:
+A package called **cross-env** has been included to remove the requirement for manually updating testing environment variables. Simply run the commands and the scripts will take care of the db switch.
 
-`API_ENV=testing`
-
-Just before running the test command include the line in the *.env* file and remove it once tests have run for best results.
 
 **Test command**
 

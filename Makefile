@@ -18,5 +18,5 @@ start:
 	node app.js
 
 run:
-	nodemon app.js
+	npm run serve
 

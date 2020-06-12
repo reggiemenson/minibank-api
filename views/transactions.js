@@ -80,10 +80,9 @@ function create(data, res, pool) {
             message = 'Insufficient funds'
             status = 422
             result = []
-            await client.query('ROLLBACK')
           } else {
-            const toBalRecord = await client.query('SELECT balance FROM accounts where id=$1', [to])
             const newFromBalance = startBalRecord.rows[0].balance - amount
+            const toBalRecord = await client.query('SELECT balance FROM accounts where id=$1', [to])
             const newToBalance = toBalRecord.rows[0].balance + amount
             await client.query('UPDATE accounts SET balance=$1 WHERE id=$2;', [newFromBalance, from])
             await client.query('UPDATE accounts SET balance=$1 WHERE id=$2;', [newToBalance, to])
