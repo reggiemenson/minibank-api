@@ -18,8 +18,4 @@ VALUES
     (
         4,
         'Georgina Hazel'
-    ),
-    (
-        5,
-        'It worked!'
     );

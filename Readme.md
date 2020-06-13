@@ -147,10 +147,6 @@ Making a request to the customers endpoint returns all customers with the follow
     {
       "id": 4,
       "name": "Georgina Hazel"
-    },
-    {
-      "id": 5,
-      "name": "It worked!"
     }
   ],
   "message": null
