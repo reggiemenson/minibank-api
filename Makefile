@@ -2,7 +2,7 @@
 install:
 	npm install
 
-services:
+up:
 	docker-compose up -d
 
 down:

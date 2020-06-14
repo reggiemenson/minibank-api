@@ -71,7 +71,7 @@ describe('When querying the customer endpoint specifying a customer', () => {
         expect(res.body.customers).to.have.lengthOf(1)
         expect(res.body.customers[0]).to.deep.equal({
           'id': 1,
-          'name': 'Arisha Barron'
+          'name': 'Bobbie Francis'
         })
         done()
       })

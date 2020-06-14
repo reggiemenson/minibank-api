@@ -5,17 +5,17 @@ INSERT INTO customers(
 VALUES
     (
         1,
-        'Arisha Barron'
+        'Bobbie Francis'
     ),
     (
         2,
-        'Branden Gibson'
+        'Kerry Wells'
     ),
     (
         3,
-        'Rhonda Church'
+        'Ira Watkins'
     ),
     (
         4,
-        'Georgina Hazel'
+        'Eddie Blake'
     );

@@ -13,7 +13,7 @@ function index(data, res, pool) {
   
   let message = null
   let status = null
-  let result = null
+  let result = []
 
   ; (async () => {
     const client = await pool.connect()
@@ -35,12 +35,10 @@ function index(data, res, pool) {
           } else {
             message = 'invalid account'
             status = 400
-            result = []
           }
         } catch {
           message = 'db query error'
           status = 400
-          result = []
         } finally {
           client.release()
           handleResponse(status, res, result, message)
@@ -49,7 +47,6 @@ function index(data, res, pool) {
     } else {
       message = 'no account data'
       status = 404
-      result = []
       handleResponse(status, res, result, message)
     }
   })().catch(err => {
@@ -64,7 +61,7 @@ function index(data, res, pool) {
 function create(data, res, pool) {
   let message = null
   let status = null
-  let result = null
+  let result = []
   let createdAt = null
 
   ; (async () => {
@@ -79,7 +76,6 @@ function create(data, res, pool) {
           if (startBalRecord.rows[0].balance < amount) {
             message = 'Insufficient funds'
             status = 422
-            result = []
           } else {
             const newFromBalance = startBalRecord.rows[0].balance - amount
             const toBalRecord = await client.query('SELECT balance FROM accounts where id=$1', [to])
@@ -96,7 +92,6 @@ function create(data, res, pool) {
         } catch (e) {
           message = 'db query error'
           status = 400
-          result = []
         } finally {
           client.release()
           handleResponse(status, res, result, message)
@@ -104,13 +99,11 @@ function create(data, res, pool) {
       } else {
         message = 'Insufficient fields'
         status = 400
-        result = []
         handleResponse(status, res, result, message)
       }
     } else {
       message = 'No data provided'
       status = 400
-      result = []
       handleResponse(status, res, result, message)
     }
   })().catch(err => {

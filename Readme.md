@@ -19,13 +19,11 @@ Begin by cloning the repository:
 
 `git clone <repo-name>`
 
-This project has been built to take care of the majority of setup, in order to speed up the installation time.
+This project makes use of a **Makefile** and **Docker**.
 
-While the database has been containerized, the Node.js API requires the correct setup of dependencies. 
+The database(s) has been containerized and can be spun up alongside the main application. 
 
-The project also requires **Docker**. Once installed setup will be sped up through the use of organised commands.
-
-* Install Docker by visiting their website [here](https://www.docker.com/). 
+If you do not have docker installed, please go ahead and install Docker by visiting their website [here](https://www.docker.com/). 
 
 **If you do not use Docker, setup will require the installation and running of a local postgreSQL service.**
 
@@ -49,9 +47,11 @@ If you have brew installed, you can use it to install node by running:
 
 The alternative is to go ahead and visit their website at [nodejs.org](https://nodejs.org/en/docs/)
 
+Before you proceed make sure you have the **node package manager** command has been installed by running `which npm` or `npm -v` for the version number.
+
 ## Deployment
 
-Another tool available is the use of a **Makefile**. This will enable minimal reference to terminal commands and should be available if you have [Xcode](https://developer.apple.com/xcode/) on your machine. A list of the commands needed are available in the next section.
+Use the commands in the **Makefile** to start up the development environment. **Make** commands should be available if you have [Xcode](https://developer.apple.com/xcode/) on your machine. A list of the commands needed are available in the next section.
 
 You should now be set to start up the development environment. Run the following commands at the root of the project directory.
 
@@ -60,7 +60,7 @@ You should now be set to start up the development environment. Run the following
 ```
 $ make install
 
-$ make services
+$ make up
 
 $ make test
 
@@ -74,9 +74,9 @@ $ make start
 
 This starts up Node Package Manager's install process. While the database is containerized, the API will be manually started.
 
-**Services command**
+**Up command**
 
-`make services`
+`make up`
 
 This command makes use of docker-compose and spins up two databases:
 * one for testing
@@ -91,7 +91,7 @@ A package called **cross-env** has been included to remove the requirement for m
 
 `make test`
 
-This project makes use of **Supertest**, **Mocha** and **Chai** libraries to display easily readable responses and ease testing.
+This project makes use of **Supertest**, **Mocha** and **Chai** libraries to display more natural language test suites and demonstrate behaviour tests.
 
 **Run command**
 
@@ -134,19 +134,19 @@ Making a request to the customers endpoint returns all customers with the follow
   "customers": [
     {
       "id": 1,
-      "name": "Arisha Barron"
+      "name": "Bobbie Francis"
     },
     {
       "id": 2,
-      "name": "Branden Gibson"
+      "name": "Kerry Wells"
     },
     {
       "id": 3,
-      "name": "Rhonda Church"
+      "name": "Ira Watkins"
     },
     {
       "id": 4,
-      "name": "Georgina Hazel"
+      "name": "Eddie Blake"
     }
   ],
   "message": null

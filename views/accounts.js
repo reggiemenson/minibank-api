@@ -13,7 +13,7 @@ function handleResponse(status, res, displayAccounts, message) {
 async function index(data, res, pool) {
   let message = null
   let status = null
-  let result = null
+  let result = []
 
   ; (async () => {
     const client = await pool.connect()
@@ -33,7 +33,6 @@ async function index(data, res, pool) {
         } catch {
           message = 'db query error'
           status = 400
-          result = []
         } finally {
           client.release()
           handleResponse(status, res, result, message)
@@ -53,7 +52,6 @@ async function index(data, res, pool) {
       } catch {
         message = 'db query error'
         status = 400
-        result = []
       } finally {
         client.release()
         handleResponse(status, res, result, message)
@@ -73,7 +71,7 @@ async function index(data, res, pool) {
 function create(data, res, pool) {
   let message = null
   let status = null
-  let result = null
+  let result = []
 
   ; (async () => {
     const client = await pool.connect()
@@ -96,7 +94,6 @@ function create(data, res, pool) {
         } catch {
           message = 'db query error'
           status = 400
-          result = []
         } finally {
           client.release()
           handleResponse(status, res, result, message)
@@ -106,7 +103,6 @@ function create(data, res, pool) {
     } else {
       message = 'No data provided'
       status = 400
-      result = []
       handleResponse(status, res, result, message)
     }
   })().catch(err => {

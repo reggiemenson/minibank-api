@@ -12,7 +12,7 @@ function handleResponse(status, res, displayCustomers, message) {
 async function index(data, res, pool) {
   let message = null
   let status = null
-  let result = null
+  let result = []
 
   ; (async () => {
     const client = await pool.connect()
@@ -32,7 +32,6 @@ async function index(data, res, pool) {
         } catch {
           message = 'db query error'
           status = 400
-          result = []
         } finally {
           client.release()
           handleResponse(status, res, result, message)
@@ -52,7 +51,6 @@ async function index(data, res, pool) {
       } catch {
         message = 'db query error'
         status = 400
-        result = []
       } finally {
         client.release()
         handleResponse(status, res, result, message)
