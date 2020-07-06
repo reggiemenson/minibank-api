@@ -43,7 +43,7 @@ DB_PASS=password
 * Please make sure you have node installed on your machine. This service has been developed with **version v12.12.0**. It's important to have this version or later to maintain the expected results.
 
 If you have brew installed, you can use it to install node by running:
-`brew install node@12` (please note, in some cases there have been issues installing npm with brew and I would personally not recommended it)
+`brew install node`
 
 The alternative is to go ahead and visit their website at [nodejs.org](https://nodejs.org/en/docs/)
 
@@ -167,7 +167,7 @@ returns:
   "customers": [
     {
       "id": 1,
-      "name": "Arisha Barron"
+      "name": "Bobbie Francis"
     }
   ],
   "message": null
